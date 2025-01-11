@@ -1,3 +1,16 @@
+# CODETECH--Task1
+
+**Name:** MD SAMEER ANSARI
+
+**Company:** CODTECH IT SOLUTIONS
+
+**ID:** CT12WDS94
+
+**Domain:** Python Programming
+
+**Duration:** December to March 2024 
+
+
 # CODETECH--Task-1-API-integration-and-data-visualization-
 To fetch data from a public API such as OpenWeatherMap, you can use Python's requests library to make HTTP requests and retrieve the data. Here's a step-by-step guide to get data from the OpenWeatherMap API:
 
