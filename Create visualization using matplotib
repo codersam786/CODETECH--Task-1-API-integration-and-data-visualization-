@@ -52,3 +52,77 @@ if response.status_code == 200:
     plt.show()
 else:
     print(f"Error: {response.status_code}")
+
+
+#Line chart code
+import matplotlib.pyplot as plt
+
+
+# initializing the data
+x = [10, 20, 30, 40]
+y = [20, 25, 35, 55]
+
+# plotting the data
+plt.plot(x, y)
+
+# Adding title to the plot
+plt.title("Line Chart")
+
+# Adding label on the y-axis
+plt.ylabel('Y-Axis')
+
+# Adding label on the x-axis
+plt.xlabel('X-Axis')
+
+plt.show()
+
+#Bar chart Code
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Reading the tips.csv file
+data = pd.read_csv('tips.csv')
+
+# initializing the data
+x = data['day']
+y = data['total_bill']
+
+# plotting the data
+plt.bar(x, y)
+
+# Adding title to the plot
+plt.title("Tips Dataset")
+
+# Adding label on the y-axis
+plt.ylabel('Total Bill')
+
+# Adding label on the x-axis
+plt.xlabel('Day')
+
+plt.show()
+
+
+# Histogram
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Reading the tips.csv file
+data = pd.read_csv('tips.csv')
+
+# initializing the data
+x = data['total_bill']
+
+# plotting the data
+plt.hist(x)
+
+# Adding title to the plot
+plt.title("Tips Dataset")
+
+# Adding label on the y-axis
+plt.ylabel('Frequency')
+
+# Adding label on the x-axis
+plt.xlabel('Total Bill')
+
+plt.show()
+
