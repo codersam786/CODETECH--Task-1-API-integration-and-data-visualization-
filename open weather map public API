@@ -1,0 +1,40 @@
+import requests
+
+# Define your API key (replace with your actual key)
+API_KEY = 'your_api_key_here'
+
+# Base URL for the OpenWeatherMap API
+BASE_URL = 'http://api.openweathermap.org/data/2.5/weather'
+
+# City for which you want to get weather data
+city = 'London'
+
+# Define the parameters for the request
+params = {
+    'q': city,
+    'appid': API_KEY,  # Your API key
+    'units': 'metric'  # Get temperature in Celsius
+}
+
+# Send GET request to OpenWeatherMap API
+response = requests.get(BASE_URL, params=params)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Parse the JSON data returned from the API
+    data = response.json()
+    
+    # Extract and display relevant information
+    weather_description = data['weather'][0]['description']
+    temperature = data['main']['temp']
+    humidity = data['main']['humidity']
+    wind_speed = data['wind']['speed']
+    
+    print(f"City: {city}")
+    print(f"Weather: {weather_description}")
+    print(f"Temperature: {temperature}°C")
+    print(f"Humidity: {humidity}%")
+    print(f"Wind Speed: {wind_speed} m/s")
+else:
+    # Print error message if the request was unsuccessful
+    print(f"Error: {response.status_code}")
