@@ -88,5 +88,57 @@ matplotlib.pyplot.hist(x, bins=None, range=None, density=False, weights=None, cu
 
 
 
+# A script and visualization dashboard
+The above functions are commonly used. In this example, We can create three types of charts named Line Chart, Bar Chart, and Bubble Chart. Here, we have four conditions as well ‘Formerly_Smoked’, ‘Smoked’, ‘Never_Smoked’, and ‘Unknown’. With the help of this example, We can create any chart diagram for any conditions means a total of 12 chart diagrams. 
+
+Step 1: First, We are going to set a title and some description for the main dashboard window using the above functions:
 
 
+st.title(“Stroke Prediction Dashboard”)
+
+
+st.markdown(“The dashboard will help a researcher to get to know more about the given datasets and it’s output”)
+
+
+Step 2: Now, Let’s create a sidebar with a simple title and description.
+
+
+st.sidebar.title(“Select Visual Charts”)
+
+
+st.sidebar.markdown(“Select the Charts/Plots accordingly:”)
+
+
+Step 3: Using pandas Library, we need to read our .csv file for creating a data frame. You can use this dataset for demonstration.
+
+data = pd.read_csv("<Path_for_.csv_file>")
+Step 4: Streamlit also provides us some functions through which we can easily create a select box within a single line of code. In our program, we are giving two arguments first as title or Captions and second for select box options in form of a tuple.
+
+
+chart_visual = st.sidebar.selectbox(‘Select Charts/Plot type’, (‘Line Chart’, ‘Bar Chart’, ‘Bubble Chart’))
+
+
+Step 5: As similar to the select box, we have another method for creating a checkbox.
+
+st.sidebar.checkbox("Show Analysis by Smoking Status", True, key=1)
+Step 6: Using selectbox() function, we are going to create a selectbox with four options. 
+
+
+selected_status = st.sidebar.selectbox(‘Select Smoking Status’, options=[‘Formerly_Smoked’, ‘Smoked’, ‘Never_Smoked’, ‘Unknown’])
+
+
+Step 7: When we select one option from the first selection box that value gets stored into the chart_visual variable. This variable value represents the chart type. Through the second selection box, that value gets stored into the selected_status variable. Using this value, we will create the main graph. Using the simple if_else condition, we will make conditions for drawing the graphs.
+
+Step 8: Using the add_trace() method, New traces will be added to a graph object figure. This method will take a graph object trace (an instance of go.Bar, go.Scatter etc.) as an argument and adds it to the figure. 
+
+Step 9: Using go.Scatter(), go.Bar() method, We will create informative graphs through which a researcher can easily understand the output of the datasets. First, go.Scatter() takes four arguments in our program, first as x_axis value, second as y-axis value, third as a mode of the figure, and fourth as the name of the newly created graph.
+
+fig.add_trace(go.Scatter(x=data.Country, y=data.formerly_smoked,
+                                 mode='lines',
+                                 name='Formerly_Smoked'))
+Step 10: Second, go.Bar() method takes three arguments in our program, first as x_axis value, second as y-axis value, and third as the name of the newly created graph.
+
+fig.add_trace(go.Bar(x=data.Country, y=data.Unknown,
+                             name="Unknown"))
+![Screenshot 2025-01-11 141038](https://github.com/user-attachments/assets/a2a8777e-0e5a-4b16-821f-4ce14a4e87cb)
+![Screenshot 2025-01-11 141049](https://github.com/user-attachments/assets/4aec4ba8-be3c-4938-b735-9afead03c72e)
