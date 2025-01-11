@@ -20,6 +20,11 @@ q: The city name (e.g., London).
 appid: Your API key.
 units: The units for temperature (metric for Celsius, imperial for Fahrenheit).
 
+
+
+
+
+
 # OUTPUT
 ![Screenshot 2025-01-11 133001](https://github.com/user-attachments/assets/334a34a2-adc9-4565-8d61-089d747b0eb2)
 
@@ -47,6 +52,29 @@ This will display a simple bar chart where:
 The x-axis contains the labels (Temperature, Humidity, Wind Speed).
 The y-axis contains the actual values (in the respective units).
 You can adjust the chart's style, colors, and other parameters to customize the visualization.
+
+# Matplotlib supports a variety of plots including line charts, bar charts, histograms, scatter plots, etc. We will discuss the most commonly used charts in this article with the help of some good examples and will also see how to customize each plot.  
+
+# 1. Line Chart
+Line chart is one of the basic plots and can be created using the plot() function. It is used to represent a relationship between two data X and Y on a different axis.
+
+Syntax:
+
+matplotlib.pyplot.plot(\*args, scalex=True, scaley=True, data=None, \*\*kwargs)
+
+# 2. Bar chart
+ A bar chart is a graph that represents the category of data with rectangular bars with lengths and heights that is proportional to the values which they represent. The bar plots can be plotted horizontally or vertically. A bar chart describes the comparisons between the discrete categories. It can be created using the bar() method.
+
+In the below example, we will use the tips dataset. Tips database is the record of the tip given by the customers in a restaurant for two and a half months in the early 1990s. It contains 6 columns as total_bill, tip, sex, smoker, day, time, size.
+
+# 3. Histogram
+A histogram is basically used to represent data provided in a form of some groups. It is a type of bar plot where the X-axis represents the bin ranges while the Y-axis gives information about frequency. The hist() function is used to compute and create histogram of x.
+
+Syntax:
+
+matplotlib.pyplot.hist(x, bins=None, range=None, density=False, weights=None, cumulative=False, bottom=None, histtype=’bar’, align=’mid’, orientation=’vertical’, rwidth=None, log=False, color=None, label=None, stacked=False, \*, data=None, \*\*kwargs)
+
+
 
 # OUTPUT
 1. Line chart
